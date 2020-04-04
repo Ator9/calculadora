@@ -1,0 +1,115 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Calculadora</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous" />
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="https://calculadora.ar">Calculadora</a>
+        <div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Otras Calculadoras</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <!-- <a class="dropdown-item active" href="">Cat</a>
+                        <a class="dropdown-item active" href="">Cat</a> -->
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav><br><br><br>
+<div class="container">
+    <div class="card bg-light">
+    <div class="card-header">
+        <div class="input-group">
+            <input type="text" class="form-control form-control-lg text-right" id="calc_numbers" aria-describedby="button-addon2" readonly>
+            <div class="input-group-append">
+                <button class="btn btn-warning" type="button" id="calc_back"><span data-feather="delete"></span></button>
+            </div>
+        </div>
+    </div>
+    <div class="card-body text-center">
+        <div class="row m-1 mb-3">
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">7</button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">8</button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">9</button>
+            <button class="col btn btn-info btn-lg calc_add" type="button">/</button>
+        </div>
+        <div class="row m-1 mb-3">
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">4</button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">5</button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">6</button>
+            <button class="col btn btn-info btn-lg calc_add" type="button">+</button>
+        </div>
+        <div class="row m-1 mb-3">
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">1</button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">2</button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">3</button>
+            <button class="col btn btn-info btn-lg calc_add" type="button">-</button>
+        </div>
+        <div class="row m-1 mb-3">
+            <button class="col btn btn-danger btn-lg mr-3 pt-1" type="button" id="calc_trash"><span data-feather="trash-2"></span></button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">0</button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">.</button>
+            <button class="col btn btn-info btn-lg calc_add" type="button">*</button>
+        </div>
+        <div class="row m-1">
+            <button class="col btn btn-primary btn-lg" id="calc_calc" type="button">=</button>
+        </div>
+    </div>
+    <div class="card-footer">
+        <div class="row">
+            <div class="col-6 text-right ml-n2">
+                <h2>Total</h2>
+            </div>
+            <div class="col-6 text-left pl-0" id="calc_show_result">
+                <h2>0</h2>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha256-OUFW7hFO0/r5aEGTQOz9F/aXQOt+TwqI1Z4fbVvww04=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.26.0/feather.min.js" integrity="sha256-eQlMOzbcwVddZVfW/9Oldo9GDwjNXQmFt683d3zfcrs=" crossorigin="anonymous"></script>
+<script>
+feather.replace();
+
+$('.calc_add').on('click', function () {
+    $('#calc_numbers').val($('#calc_numbers').val()+$(this).html());
+});
+
+$('#calc_back').on('click', function () {
+    $('#calc_numbers').val($('#calc_numbers').val().slice(0,-1));
+});
+
+$('#calc_trash').on('click', function () {
+    $('#calc_numbers').val('');
+});
+
+$('#calc_calc').on('click', function () {
+    try {
+        result = eval($('#calc_numbers').val());
+    } catch (e) {
+        if (e instanceof SyntaxError) {
+            console.log(e.message);
+            result = 'Error';
+        }
+    }
+
+    $('#calc_show_result').html('<h2>'+result+'</h2><br>'+$('#calc_show_result').html().replace('h2','span class="p-0"'));
+});
+</script>
+</body>
+</html>
