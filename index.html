@@ -19,31 +19,34 @@
     </div>
     <div class="card-body text-center">
         <div class="row m-1 mb-3">
-            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">7</button>
-            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">8</button>
-            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">9</button>
-            <button class="col btn btn-info btn-lg calc_add" type="button">/</button>
+            <button class="col btn btn-danger btn-lg mr-3 pt-1" type="button" id="calc_trash" aria-label="limpiar"><span data-feather="trash-2"></span></button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button" aria-label="(">(</button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button" aria-label=")">)</button>
+            <button class="col btn btn-warning btn-lg pt-1" type="button" id="calc_back" aria-label="retroceder 1"><span data-feather="delete"></span></button>
         </div>
         <div class="row m-1 mb-3">
-            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">4</button>
-            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">5</button>
-            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">6</button>
-            <button class="col btn btn-info btn-lg calc_add" type="button">+</button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button" aria-label="7">7</button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button" aria-label="8">8</button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button" aria-label="9">9</button>
+            <button class="col btn btn-info btn-lg calc_add" type="button" aria-label="dividir">/</button>
         </div>
         <div class="row m-1 mb-3">
-            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">1</button>
-            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">2</button>
-            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">3</button>
-            <button class="col btn btn-info btn-lg calc_add" type="button">-</button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button" aria-label="4">4</button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button" aria-label="5">5</button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button" aria-label="6">6</button>
+            <button class="col btn btn-info btn-lg calc_add" type="button" aria-label="sumar">+</button>
         </div>
         <div class="row m-1 mb-3">
-            <button class="col btn btn-danger btn-lg mr-3 pt-1" type="button" id="calc_trash"><span data-feather="trash-2"></span></button>
-            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">0</button>
-            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button">.</button>
-            <button class="col btn btn-info btn-lg calc_add" type="button">*</button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button" aria-label="1">1</button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button" aria-label="2">2</button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button" aria-label="3">3</button>
+            <button class="col btn btn-info btn-lg calc_add" type="button" aria-label="restar">-</button>
         </div>
-        <div class="row m-1">
-            <button class="col btn btn-primary btn-lg" id="calc_calc" type="button">=</button>
+        <div class="row m-1 mb-3">
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button" aria-label="0">0</button>
+            <button class="col btn btn-dark btn-lg mr-3 calc_add" type="button" aria-label=".">.</button>
+            <button class="col btn btn-primary btn-lg mr-3" type="button" id="calc_calc" aria-label="calcular cuenta">=</button>
+            <button class="col btn btn-info btn-lg calc_add" type="button" aria-label="multiplicar">*</button>
         </div>
     </div>
     <div class="card-footer">
